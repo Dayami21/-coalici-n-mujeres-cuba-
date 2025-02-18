@@ -1,6 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- SEO Metatags -->
     <title>Cultura | Coalición de Mujeres x Cuba Libre</title>
     <meta name="description" content="Cultura, eventos y actividades de la Coalición de Mujeres x Cuba Libre">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0046BE',
+                            'blue-dark': '#003A99',
+                            red: '#B71C1C',
+                            'red-dark': '#8B0000',
+                            white: '#FFFFFF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-white">
+    <!-- Navbar -->
+    <nav class="bg-[#0046BE] text-white p-4">
+        <div class="container mx-auto">
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold">Coalición de Mujeres x Cuba Libre</a>
+                <div class="space-x-6">
+                    <a href="quienes-somos.html" class="hover:text-gray-200">Quiénes Somos</a>
+                    <a href="noticias.html" class="hover:text-gray-200">Noticias</a>
+                    <a href="testimonios.html" class="hover:text-gray-200">Testimonios</a>
+                    <a href="recursos.html" class="hover:text-gray-200">Recursos</a>
+                    <a href="cultura.html" class="hover:text-gray-200">Cultura</a>
+                    <a href="contacto.html" class="hover:text-gray-200">Contacto</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden" x-data="{ open: false }">
+                <div class="flex items-center justify-between">
+                    <a href="index.html" class="text-xl font-bold">Coalición</a>
+                    <button @click="open = !open" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div x-show="open" class="mt-4 space-y-2">
+                    <a href="quienes-somos.html" class="block hover:text-gray-200">Quiénes Somos</a>
+                    <a href="noticias.html" class="block hover:text-gray-200">Noticias</a>
+                    <a href="testimonios.html" class="block hover:text-gray-200">Testimonios</a>
+                    <a href="recursos.html" class="block hover:text-gray-200">Recursos</a>
+                    <a href="cultura.html" class="block hover:text-gray-200">Cultura</a>
+                    <a href="contacto.html" class="block hover:text-gray-200">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <div class="bg-brand-blue text-white py-20">
@@ -17,7 +91,58 @@
             <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Próximos Eventos Culturales</h2>
             
             <!-- Grid de Eventos -->
-            [Mantener el contenido existente de los eventos]
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Evento 1 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200 relative">
+                        <div class="absolute top-4 right-4 bg-[#0046BE] text-white px-4 py-2 rounded-lg">
+                            <div class="text-sm">MAR</div>
+                            <div class="text-2xl font-bold">15</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Festival de Arte Cubano</h3>
+                        <p class="text-gray-600 mb-4">Exhibición de artistas cubanos contemporáneos</p>
+                        <button class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">
+                            Registrarse
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Evento 2 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200 relative">
+                        <div class="absolute top-4 right-4 bg-[#0046BE] text-white px-4 py-2 rounded-lg">
+                            <div class="text-sm">ABR</div>
+                            <div class="text-2xl font-bold">05</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Noche de Poesía</h3>
+                        <p class="text-gray-600 mb-4">Lectura de poetas cubanas en resistencia</p>
+                        <button class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">
+                            Registrarse
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Evento 3 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200 relative">
+                        <div class="absolute top-4 right-4 bg-[#0046BE] text-white px-4 py-2 rounded-lg">
+                            <div class="text-sm">ABR</div>
+                            <div class="text-2xl font-bold">20</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Concierto por la Libertad</h3>
+                        <p class="text-gray-600 mb-4">Músicos unidos por una Cuba libre</p>
+                        <button class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">
+                            Registrarse
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- 2. BLOG CULTURAL -->
@@ -25,7 +150,35 @@
             <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Blog Cultural</h2>
             
             <!-- Entradas del Blog -->
-            [Mantener el contenido existente del blog]
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Entrada 1 -->
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Arte</span>
+                            <span class="ml-2 text-gray-500 text-sm">15 de Marzo, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">El Arte como Forma de Resistencia</h3>
+                        <p class="text-gray-600 mb-4">Explorando cómo los artistas cubanos utilizan su arte para expresar la búsqueda de libertad...</p>
+                        <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Entrada 2 -->
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Literatura</span>
+                            <span class="ml-2 text-gray-500 text-sm">12 de Marzo, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Voces Literarias en el Exilio</h3>
+                        <p class="text-gray-600 mb-4">Un recorrido por la literatura cubana contemporánea y su impacto en la lucha por la libertad...</p>
+                        <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <!-- 3. GALERÍA CULTURAL -->
@@ -34,19 +187,63 @@
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Imágenes de la galería -->
-                <div class="aspect-square bg-gray-200 rounded-lg"></div>
-                <div class="aspect-square bg-gray-200 rounded-lg"></div>
-                <div class="aspect-square bg-gray-200 rounded-lg"></div>
-                <div class="aspect-square bg-gray-200 rounded-lg"></div>
-                <div class="aspect-square bg-gray-200 rounded-lg"></div>
-                <div class="aspect-square bg-gray-200 rounded-lg"></div>
-                <div class="aspect-square bg-gray-200 rounded-lg"></div>
-                <div class="aspect-square bg-gray-200 rounded-lg"></div>
+                <div class="aspect-square bg-gray-200 rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="aspect-square bg-gray-200 rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="aspect-square bg-gray-200 rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="aspect-square bg-gray-200 rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="aspect-square bg-gray-200 rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="aspect-square bg-gray-200 rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="aspect-square bg-gray-200 rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="aspect-square bg-gray-200 rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
             </div>
         </section>
 
         <!-- 4. REGISTRO PARA EVENTOS -->
         <section id="registro" class="mb-16">
-            [Mantener el contenido existente del formulario de registro]
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Registro para Eventos</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label for="nombre" class="block text-gray-700 mb-2">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    
+                    <div>
+                        <label for="evento" class="block text-gray-700 mb-2">Seleccionar Evento</label>
+                        <select id="evento" name="evento" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                            <option value="">Seleccione un evento</option>
+                            <option value="festival">Festival de Arte Cubano - 15 MAR</option>
+                            <option value="poesia">Noche de Poesía - 05 ABR</option>
+                            <option value="concierto">Concierto por la Libertad - 20 ABR</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="participantes" class="block text-gray-700 mb-2">Número de Participantes</label>
+                        <input type="number" id="participantes" name="participantes" min="1" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    
+                    <div>
+                        <label for="comentarios" class="block text-gray-700 mb-2">Comentarios Adicionales</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-[#0046BE] text-white py-3 rounded-lg hover:bg-[#003A99]">
+                        Confirmar Registro
+                    </button>
+                </form>
+            </div>
         </section>
-    </main> 
+    </main>
+
+    <footer class="bg-[#0046BE] text-white py-8 text-center">
+        <p class="font-bold">Coalición de Mujeres x Cuba Libre</p>
+        <p>Trabajando por una Cuba libre y democrática</p>
+    </footer>
+</body>
+</html> 
