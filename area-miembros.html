@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Metatags -->
+    <title>Área de Miembros | Coalición de Mujeres x Cuba Libre</title>
+    <meta name="description" content="Portal exclusivo para miembros de la Coalición de Mujeres x Cuba Libre">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0046BE',
+                            'blue-dark': '#003A99',
+                            red: '#B71C1C',
+                            'red-dark': '#8B0000',
+                            white: '#FFFFFF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-white">
+    <!-- Navbar -->
+    <nav class="bg-[#0046BE] text-white p-4">
+        <div class="container mx-auto">
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold">Coalición de Mujeres x Cuba Libre</a>
+                <div class="space-x-6">
+                    <a href="quienes-somos.html" class="hover:text-gray-200">Quiénes Somos</a>
+                    <a href="recursos.html" class="hover:text-gray-200">Recursos</a>
+                    <a href="eventos.html" class="hover:text-gray-200">Eventos</a>
+                    <a href="area-miembros.html" class="hover:text-gray-200">Área de Miembros</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden" x-data="{ open: false }">
+                <div class="flex items-center justify-between">
+                    <a href="index.html" class="text-xl font-bold">Coalición</a>
+                    <button @click="open = !open" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div x-show="open" class="mt-4 space-y-2">
+                    <a href="quienes-somos.html" class="block hover:text-gray-200">Quiénes Somos</a>
+                    <a href="recursos.html" class="block hover:text-gray-200">Recursos</a>
+                    <a href="eventos.html" class="block hover:text-gray-200">Eventos</a>
+                    <a href="area-miembros.html" class="block hover:text-gray-200">Área de Miembros</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-brand-blue text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Área de Miembros</h1>
+            <p class="text-xl">Accede a recursos exclusivos y conecta con otros miembros</p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Login/Registro -->
+        <section id="acceso" class="mb-16" x-data="{ showLogin: true }">
+            <div class="max-w-md mx-auto bg-white rounded-lg shadow-xl p-8">
+                <!-- Tabs -->
+                <div class="flex mb-8">
+                    <button 
+                        @click="showLogin = true" 
+                        :class="showLogin ? 'bg-[#0046BE] text-white' : 'bg-gray-100 text-gray-700'"
+                        class="flex-1 py-2 rounded-l-lg transition-colors">
+                        Iniciar Sesión
+                    </button>
+                    <button 
+                        @click="showLogin = false" 
+                        :class="!showLogin ? 'bg-[#0046BE] text-white' : 'bg-gray-100 text-gray-700'"
+                        class="flex-1 py-2 rounded-r-lg transition-colors">
+                        Registrarse
+                    </button>
+                </div>
+
+                <!-- Formulario de Login -->
+                <form x-show="showLogin" class="space-y-6">
+                    <div>
+                        <label for="email-login" class="block text-gray-700 mb-2">Correo Electrónico</label>
+                        <input type="email" id="email-login" name="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="password-login" class="block text-gray-700 mb-2">Contraseña</label>
+                        <input type="password" id="password-login" name="password" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="remember" name="remember" class="mr-2">
+                            <label for="remember">Recordarme</label>
+                        </div>
+                        <a href="#" class="text-[#0046BE] hover:text-[#003A99]">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <button type="submit" class="w-full bg-[#0046BE] text-white py-3 rounded-lg hover:bg-[#003A99]">
+                        Iniciar Sesión
+                    </button>
+                </form>
+
+                <!-- Formulario de Registro -->
+                <form x-show="!showLogin" class="space-y-6">
+                    <div>
+                        <label for="nombre-registro" class="block text-gray-700 mb-2">Nombre Completo</label>
+                        <input type="text" id="nombre-registro" name="nombre" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="email-registro" class="block text-gray-700 mb-2">Correo Electrónico</label>
+                        <input type="email" id="email-registro" name="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="password-registro" class="block text-gray-700 mb-2">Contraseña</label>
+                        <input type="password" id="password-registro" name="password" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="password-confirm" class="block text-gray-700 mb-2">Confirmar Contraseña</label>
+                        <input type="password" id="password-confirm" name="password_confirmation" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    <button type="submit" class="w-full bg-[#0046BE] text-white py-3 rounded-lg hover:bg-[#003A99]">
+                        Registrarse
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contenido para Miembros -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Foros de Discusión -->
+            <section id="foros" class="md:col-span-2">
+                <h2 class="text-4xl text-[#0046BE] mb-8 font-bold">Foros de Discusión</h2>
+                
+                <!-- Lista de Foros -->
+                <div class="space-y-6">
+                    <!-- Foro 1 -->
+                    <div class="bg-white rounded-lg shadow-xl p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-[#0046BE]">Estrategias de Activismo</h3>
+                                <p class="text-gray-600">Discusión sobre métodos efectivos de activismo pacífico</p>
+                            </div>
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">32 mensajes</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Último mensaje por María G. - hace 2 horas</span>
+                        </div>
+                    </div>
+
+                    <!-- Foro 2 -->
+                    <div class="bg-white rounded-lg shadow-xl p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-[#0046BE]">Noticias y Actualizaciones</h3>
+                                <p class="text-gray-600">Compartiendo noticias relevantes sobre Cuba</p>
+                            </div>
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">45 mensajes</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Último mensaje por Ana R. - hace 1 hora</span>
+                        </div>
+                    </div>
+
+                    <!-- Foro 3 -->
+                    <div class="bg-white rounded-lg shadow-xl p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-[#0046BE]">Proyectos y Colaboraciones</h3>
+                                <p class="text-gray-600">Propuestas y coordinación de proyectos</p>
+                            </div>
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">28 mensajes</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span>Último mensaje por Laura M. - hace 3 horas</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <div class="space-y-8">
+                <!-- Boletín Informativo -->
+                <section id="boletin" class="bg-white rounded-lg shadow-xl p-6">
+                    <h2 class="text-2xl text-[#0046BE] mb-4 font-bold">Boletín Informativo</h2>
+                    <p class="text-gray-600 mb-4">Recibe actualizaciones semanales sobre nuestras actividades</p>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="email-boletin" class="block text-gray-700 mb-2">Correo Electrónico</label>
+                            <input type="email" id="email-boletin" name="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="acepto-noticias" name="acepto-noticias" class="mr-2">
+                            <label for="acepto-noticias" class="text-sm">Acepto recibir noticias y actualizaciones</label>
+                        </div>
+                        <button type="submit" class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">
+                            Suscribirse
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Recursos Destacados -->
+                <section id="recursos-destacados" class="bg-white rounded-lg shadow-xl p-6">
+                    <h2 class="text-2xl text-[#0046BE] mb-4 font-bold">Recursos Destacados</h2>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="flex items-center text-gray-700 hover:text-[#0046BE]">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                <span>Guía de Seguridad Digital</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-gray-700 hover:text-[#0046BE]">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                <span>Manual de Activismo</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-gray-700 hover:text-[#0046BE]">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                <span>Informe Mensual</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Miembros Activos -->
+                <section id="miembros-activos" class="bg-white rounded-lg shadow-xl p-6">
+                    <h2 class="text-2xl text-[#0046BE] mb-4 font-bold">Miembros Activos</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div class="w-10 h-10 bg-[#0046BE] rounded-full flex items-center justify-center text-white text-sm">
+                            +25
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0046BE] text-white py-8 text-center">
+        <p class="font-bold">Coalición de Mujeres x Cuba Libre</p>
+        <p>Trabajando por una Cuba libre y democrática</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Metatags -->
+    <title>Noticias | Coalición de Mujeres x Cuba Libre</title>
+    <meta name="description" content="Últimas noticias y actualizaciones de la Coalición de Mujeres x Cuba Libre">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0046BE',
+                            'blue-dark': '#003A99',
+                            red: '#B71C1C',
+                            'red-dark': '#8B0000',
+                            white: '#FFFFFF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-white">
+    <!-- Navbar -->
+    <nav class="bg-[#0046BE] text-white p-4">
+        <div class="container mx-auto">
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold">Coalición de Mujeres x Cuba Libre</a>
+                <div class="space-x-6">
+                    <a href="quienes-somos.html" class="hover:text-gray-200">Quiénes Somos</a>
+                    <a href="recursos.html" class="hover:text-gray-200">Recursos</a>
+                    <a href="eventos.html" class="hover:text-gray-200">Eventos</a>
+                    <a href="noticias.html" class="hover:text-gray-200">Noticias</a>
+                    <a href="area-miembros.html" class="hover:text-gray-200">Área de Miembros</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden" x-data="{ open: false }">
+                <div class="flex items-center justify-between">
+                    <a href="index.html" class="text-xl font-bold">Coalición</a>
+                    <button @click="open = !open" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div x-show="open" class="mt-4 space-y-2">
+                    <a href="quienes-somos.html" class="block hover:text-gray-200">Quiénes Somos</a>
+                    <a href="recursos.html" class="block hover:text-gray-200">Recursos</a>
+                    <a href="eventos.html" class="block hover:text-gray-200">Eventos</a>
+                    <a href="noticias.html" class="block hover:text-gray-200">Noticias</a>
+                    <a href="area-miembros.html" class="block hover:text-gray-200">Área de Miembros</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-brand-blue text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Noticias y Actualizaciones</h1>
+            <p class="text-xl">Mantente informado sobre nuestras actividades y la situación en Cuba</p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Noticias Destacadas -->
+        <section class="mb-16">
+            <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Noticias Destacadas</h2>
+            
+            <!-- Grid de Noticias -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Noticia 1 -->
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200">
+                        <!-- Imagen de la noticia -->
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Actualidad</span>
+                            <span class="ml-2 text-gray-500 text-sm">15 de Marzo, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Conferencia Internacional sobre Derechos Humanos</h3>
+                        <p class="text-gray-600 mb-4">Próxima conferencia virtual sobre la situación de los derechos humanos en Cuba...</p>
+                        <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Noticia 2 -->
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200">
+                        <!-- Imagen de la noticia -->
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Activismo</span>
+                            <span class="ml-2 text-gray-500 text-sm">12 de Marzo, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Nueva Campaña de Concientización</h3>
+                        <p class="text-gray-600 mb-4">Lanzamiento de campaña digital para visibilizar la situación actual...</p>
+                        <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Noticia 3 -->
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200">
+                        <!-- Imagen de la noticia -->
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Comunidad</span>
+                            <span class="ml-2 text-gray-500 text-sm">10 de Marzo, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Encuentro de Miembros en Miami</h3>
+                        <p class="text-gray-600 mb-4">Exitoso encuentro de miembros de la coalición para coordinar acciones...</p>
+                        <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Categorías y Búsqueda -->
+        <section class="mb-16">
+            <div class="flex flex-wrap gap-4 justify-center mb-8">
+                <button class="bg-[#0046BE] text-white px-4 py-2 rounded-full hover:bg-[#003A99]">Todas</button>
+                <button class="bg-white text-[#0046BE] px-4 py-2 rounded-full hover:bg-gray-100">Actualidad</button>
+                <button class="bg-white text-[#0046BE] px-4 py-2 rounded-full hover:bg-gray-100">Activismo</button>
+                <button class="bg-white text-[#0046BE] px-4 py-2 rounded-full hover:bg-gray-100">Comunidad</button>
+                <button class="bg-white text-[#0046BE] px-4 py-2 rounded-full hover:bg-gray-100">Internacional</button>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Buscar noticias..." class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent">
+                    <button class="absolute right-2 top-2 text-[#0046BE]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Noticias -->
+        <section class="mb-16">
+            <!-- Noticia con imagen grande -->
+            <article class="bg-white rounded-lg shadow-xl overflow-hidden mb-8">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <div class="h-64 bg-gray-200">
+                            <!-- Imagen de la noticia -->
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Internacional</span>
+                            <span class="ml-2 text-gray-500 text-sm">8 de Marzo, 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#0046BE] mb-2">Día Internacional de la Mujer: Acciones Globales</h3>
+                        <p class="text-gray-600 mb-4">La Coalición de Mujeres x Cuba Libre se une a las manifestaciones globales por los derechos de las mujeres, con especial énfasis en la situación de las mujeres cubanas...</p>
+                        <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Más noticias -->
+            <div class="space-y-8">
+                <!-- Noticia en lista -->
+                <article class="bg-white rounded-lg shadow-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Activismo</span>
+                        <span class="ml-2 text-gray-500 text-sm">5 de Marzo, 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0046BE] mb-2">Nuevas Estrategias de Comunicación Digital</h3>
+                    <p class="text-gray-600 mb-4">La coalición implementa nuevas herramientas de comunicación segura para mantener el contacto con activistas dentro de Cuba...</p>
+                    <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                </article>
+
+                <!-- Noticia en lista -->
+                <article class="bg-white rounded-lg shadow-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Comunidad</span>
+                        <span class="ml-2 text-gray-500 text-sm">3 de Marzo, 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0046BE] mb-2">Taller de Capacitación en Derechos Humanos</h3>
+                    <p class="text-gray-600 mb-4">Exitosa conclusión del primer taller virtual de capacitación en documentación de violaciones de derechos humanos...</p>
+                    <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Paginación -->
+        <div class="flex justify-center space-x-2">
+            <button class="px-4 py-2 border rounded-lg text-[#0046BE] hover:bg-gray-100">Anterior</button>
+            <button class="px-4 py-2 bg-[#0046BE] text-white rounded-lg">1</button>
+            <button class="px-4 py-2 border rounded-lg text-[#0046BE] hover:bg-gray-100">2</button>
+            <button class="px-4 py-2 border rounded-lg text-[#0046BE] hover:bg-gray-100">3</button>
+            <button class="px-4 py-2 border rounded-lg text-[#0046BE] hover:bg-gray-100">Siguiente</button>
+        </div>
+    </main>
+
+    <footer class="bg-[#0046BE] text-white py-8 text-center">
+        <p class="font-bold">Coalición de Mujeres x Cuba Libre</p>
+        <p>Trabajando por una Cuba libre y democrática</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Metatags -->
+    <title>Quiénes Somos | Coalición de Mujeres x Cuba Libre</title>
+    <meta name="description" content="Conoce quiénes somos, nuestra misión, visión, valores y el equipo que forma parte de la Coalición de Mujeres x Cuba Libre.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0046BE',
+                            'blue-dark': '#003A99',
+                            red: '#B71C1C',
+                            'red-dark': '#8B0000',
+                            white: '#FFFFFF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-white">
+    <!-- Navbar -->
+    <nav class="bg-[#0046BE] text-white p-4">
+        <div class="container mx-auto">
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold">Coalición de Mujeres x Cuba Libre</a>
+                <div class="space-x-6">
+                    <a href="quienes-somos.html" class="hover:text-gray-200">Quiénes Somos</a>
+                    <a href="noticias.html" class="hover:text-gray-200">Noticias</a>
+                    <a href="testimonios.html" class="hover:text-gray-200">Testimonios</a>
+                    <a href="recursos.html" class="hover:text-gray-200">Recursos</a>
+                    <a href="cultura.html" class="hover:text-gray-200">Cultura</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden" x-data="{ open: false }">
+                <div class="flex items-center justify-between">
+                    <a href="index.html" class="text-xl font-bold">Coalición</a>
+                    <button @click="open = !open" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div x-show="open" class="mt-4 space-y-2">
+                    <a href="quienes-somos.html" class="block hover:text-gray-200">Quiénes Somos</a>
+                    <a href="noticias.html" class="block hover:text-gray-200">Noticias</a>
+                    <a href="testimonios.html" class="block hover:text-gray-200">Testimonios</a>
+                    <a href="recursos.html" class="block hover:text-gray-200">Recursos</a>
+                    <a href="cultura.html" class="block hover:text-gray-200">Cultura</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-brand-blue text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Quiénes Somos</h1>
+            <p class="text-xl">Conoce el equipo detrás de la Coalición de Mujeres x Cuba Libre</p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Historia y Propósito -->
+        <section id="historia" class="mb-16">
+            <div class="bg-white p-8 rounded-lg shadow-xl">
+                <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Nuestra Historia</h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    La Coalición de Mujeres x Cuba Libre nació de la necesidad de unir voces y esfuerzos en la lucha por una Cuba democrática. Fundada por mujeres comprometidas con la libertad y los derechos humanos, nuestra organización trabaja incansablemente para promover el cambio positivo en Cuba.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección de Misión y Visión -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <!-- Misión -->
+            <div class="bg-[#0046BE] rounded-lg p-8 text-white shadow-xl">
+                <h2 class="text-3xl font-bold mb-6">Nuestra Misión</h2>
+                <p class="text-xl">
+                    Promover la libertad, los derechos humanos y los valores democráticos en Cuba a través de una organización cívica efectiva y segura.
+                </p>
+            </div>
+
+            <!-- Visión -->
+            <div class="bg-[#0046BE] rounded-lg p-8 text-white shadow-xl">
+                <h2 class="text-3xl font-bold mb-6">Nuestra Visión</h2>
+                <p class="text-xl">
+                    Ser una red cívica consolidada y reconocida que inspire a las mujeres y a todos los ciudadanos cubanos a luchar por la justicia.
+                </p>
+            </div>
+        </div>
+
+        <!-- Valores -->
+        <section id="valores" class="mb-16">
+            <div class="bg-white p-8 rounded-lg shadow-xl">
+                <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Nuestros Valores</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Valor: Libertad -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#0046BE]">
+                        <h3 class="text-2xl text-[#0046BE] font-bold mb-4">Libertad</h3>
+                        <p>Creemos en el derecho inalienable de toda persona a vivir en una sociedad libre.</p>
+                    </div>
+
+                    <!-- Valor: Solidaridad -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#0046BE]">
+                        <h3 class="text-2xl text-[#0046BE] font-bold mb-4">Solidaridad</h3>
+                        <p>Fomentamos el apoyo mutuo entre las integrantes de nuestra Coalición.</p>
+                    </div>
+
+                    <!-- Valor: Democracia -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#0046BE]">
+                        <h3 class="text-2xl text-[#0046BE] font-bold mb-4">Democracia</h3>
+                        <p>Trabajamos por una Cuba donde los principios democráticos sean la base.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Junta Directiva -->
+        <section id="junta-directiva" class="mb-16">
+            <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Junta Directiva</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Miembro 1 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-64 bg-gray-200">
+                        <!-- Aquí va la foto del miembro -->
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Nombre Completo</h3>
+                        <p class="text-gray-600 font-semibold mb-2">Presidenta</p>
+                        <p class="text-gray-500">Breve biografía o descripción del cargo y responsabilidades.</p>
+                    </div>
+                </div>
+
+                <!-- Miembro 2 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-64 bg-gray-200">
+                        <!-- Aquí va la foto del miembro -->
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Nombre Completo</h3>
+                        <p class="text-gray-600 font-semibold mb-2">Vicepresidenta</p>
+                        <p class="text-gray-500">Breve biografía o descripción del cargo y responsabilidades.</p>
+                    </div>
+                </div>
+
+                <!-- Miembro 3 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-64 bg-gray-200">
+                        <!-- Aquí va la foto del miembro -->
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Nombre Completo</h3>
+                        <p class="text-gray-600 font-semibold mb-2">Secretaria General</p>
+                        <p class="text-gray-500">Breve biografía o descripción del cargo y responsabilidades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Miembros -->
+        <section id="miembros" class="mb-16">
+            <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Miembros de la Organización</h2>
+            
+            <!-- Comités -->
+            <div class="mb-12">
+                <h3 class="text-3xl text-[#0046BE] mb-6 text-center font-bold">Comités</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Comité de Derechos Humanos -->
+                    <div class="bg-white rounded-lg shadow-xl p-6">
+                        <h4 class="text-xl font-bold text-[#0046BE] mb-4">Comité de Derechos Humanos</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[#0046BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Documentación de casos</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[#0046BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Defensa legal</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[#0046BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Incidencia internacional</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Comité de Comunicación -->
+                    <div class="bg-white rounded-lg shadow-xl p-6">
+                        <h4 class="text-xl font-bold text-[#0046BE] mb-4">Comité de Comunicación</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[#0046BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Redes sociales</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[#0046BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Prensa y medios</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[#0046BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Contenido digital</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Comité de Educación -->
+                    <div class="bg-white rounded-lg shadow-xl p-6">
+                        <h4 class="text-xl font-bold text-[#0046BE] mb-4">Comité de Educación</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[#0046BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Talleres formativos</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[#0046BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Recursos educativos</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[#0046BE] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Investigación</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Miembros Destacados -->
+            <div class="mb-12">
+                <h3 class="text-3xl text-[#0046BE] mb-6 text-center font-bold">Miembros Destacados</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Miembro 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+                        <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4">
+                            <!-- Foto del miembro -->
+                        </div>
+                        <h4 class="text-lg font-bold text-[#0046BE]">Ana Martínez</h4>
+                        <p class="text-gray-600 mb-2">Comité de Derechos Humanos</p>
+                        <p class="text-sm text-gray-500">Abogada y activista con 15 años de experiencia</p>
+                    </div>
+
+                    <!-- Miembro 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+                        <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4">
+                            <!-- Foto del miembro -->
+                        </div>
+                        <h4 class="text-lg font-bold text-[#0046BE]">María Rodríguez</h4>
+                        <p class="text-gray-600 mb-2">Comité de Comunicación</p>
+                        <p class="text-sm text-gray-500">Periodista y especialista en medios digitales</p>
+                    </div>
+
+                    <!-- Miembro 3 -->
+                    <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+                        <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4">
+                            <!-- Foto del miembro -->
+                        </div>
+                        <h4 class="text-lg font-bold text-[#0046BE]">Laura González</h4>
+                        <p class="text-gray-600 mb-2">Comité de Educación</p>
+                        <p class="text-sm text-gray-500">Educadora y coordinadora de proyectos</p>
+                    </div>
+
+                    <!-- Miembro 4 -->
+                    <div class="bg-white rounded-lg shadow-lg p-4 text-center">
+                        <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4">
+                            <!-- Foto del miembro -->
+                        </div>
+                        <h4 class="text-lg font-bold text-[#0046BE]">Carmen Pérez</h4>
+                        <p class="text-gray-600 mb-2">Comité de Derechos Humanos</p>
+                        <p class="text-sm text-gray-500">Investigadora y defensora de DDHH</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estructura Organizativa -->
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <h3 class="text-3xl text-[#0046BE] mb-6 text-center font-bold">Estructura Organizativa</h3>
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-1/3 text-right font-bold text-[#0046BE]">Asamblea General</div>
+                            <div class="w-2/3">Órgano máximo de decisión, conformado por todas las miembros activas</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-1/3 text-right font-bold text-[#0046BE]">Junta Directiva</div>
+                            <div class="w-2/3">Equipo ejecutivo que implementa las decisiones de la Asamblea</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-1/3 text-right font-bold text-[#0046BE]">Comités de Trabajo</div>
+                            <div class="w-2/3">Grupos especializados que desarrollan proyectos específicos</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-1/3 text-right font-bold text-[#0046BE]">Miembros Activos</div>
+                            <div class="w-2/3">Integrantes que participan regularmente en actividades y proyectos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Únete a Nosotras -->
+        <section id="unete" class="mb-16">
+            <div class="bg-white p-8 rounded-lg shadow-xl text-center">
+                <h2 class="text-4xl text-[#0046BE] mb-8 font-bold">Únete a Nuestra Causa</h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    Tu voz es importante. Juntas podemos hacer la diferencia en el futuro de Cuba.
+                </p>
+                <a href="#" class="inline-block bg-[#0046BE] text-white px-8 py-3 rounded-lg hover:bg-[#003A99] transition-colors">
+                    Forma Parte de la Coalición
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0046BE] text-white py-8 text-center">
+        <p class="font-bold">Coalición de Mujeres x Cuba Libre</p>
+        <p>Trabajando por una Cuba libre y democrática</p>
+    </footer>
+</body>
+</html> 

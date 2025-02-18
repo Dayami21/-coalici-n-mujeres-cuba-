@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Metatags -->
+    <title>Eventos | Coalición de Mujeres x Cuba Libre</title>
+    <meta name="description" content="Calendario de eventos y actividades de la Coalición de Mujeres x Cuba Libre">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0046BE',
+                            'blue-dark': '#003A99',
+                            red: '#B71C1C',
+                            'red-dark': '#8B0000',
+                            white: '#FFFFFF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-white">
+    <!-- Navbar -->
+    <nav class="bg-[#0046BE] text-white p-4">
+        <div class="container mx-auto">
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold">Coalición de Mujeres x Cuba Libre</a>
+                <div class="space-x-6">
+                    <a href="quienes-somos.html" class="hover:text-gray-200">Quiénes Somos</a>
+                    <a href="noticias.html" class="hover:text-gray-200">Noticias</a>
+                    <a href="testimonios.html" class="hover:text-gray-200">Testimonios</a>
+                    <a href="recursos.html" class="hover:text-gray-200">Recursos</a>
+                    <a href="cultura.html" class="hover:text-gray-200">Cultura</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden" x-data="{ open: false }">
+                <div class="flex items-center justify-between">
+                    <a href="index.html" class="text-xl font-bold">Coalición</a>
+                    <button @click="open = !open" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div x-show="open" class="mt-4 space-y-2">
+                    <a href="quienes-somos.html" class="block hover:text-gray-200">Quiénes Somos</a>
+                    <a href="noticias.html" class="block hover:text-gray-200">Noticias</a>
+                    <a href="testimonios.html" class="block hover:text-gray-200">Testimonios</a>
+                    <a href="recursos.html" class="block hover:text-gray-200">Recursos</a>
+                    <a href="cultura.html" class="block hover:text-gray-200">Cultura</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-brand-blue text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Eventos y Actividades</h1>
+            <p class="text-xl">Únete a nuestros eventos y sé parte del cambio</p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- 1. BLOG Y NOTICIAS -->
+        <section id="blog" class="mb-16">
+            <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Blog y Noticias</h2>
+            
+            <!-- Entradas Destacadas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Entrada 1 -->
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200 relative">
+                        <!-- Imagen del blog -->
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Testimonios</span>
+                            <span class="ml-2 text-gray-500 text-sm">15 de Marzo, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Mi Historia de Lucha por la Libertad</h3>
+                        <p class="text-gray-600 mb-4">María González comparte su experiencia personal como activista y su visión para una Cuba libre...</p>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                            <div class="flex items-center text-gray-500">
+                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                </svg>
+                                <span>8 comentarios</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Entrada 2 -->
+                <article class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200 relative">
+                        <!-- Imagen del blog -->
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Activismo</span>
+                            <span class="ml-2 text-gray-500 text-sm">12 de Marzo, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">El Poder de la Unidad Femenina</h3>
+                        <p class="text-gray-600 mb-4">Reflexiones sobre el impacto del activismo femenino en el movimiento por la libertad de Cuba...</p>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                            <div class="flex items-center text-gray-500">
+                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                </svg>
+                                <span>12 comentarios</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Más Entradas -->
+            <div class="mt-8 space-y-6">
+                <!-- Entrada 3 -->
+                <article class="bg-white rounded-lg shadow-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-[#0046BE] text-white px-3 py-1 rounded-full text-sm">Educación</span>
+                        <span class="ml-2 text-gray-500 text-sm">10 de Marzo, 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0046BE] mb-2">La Importancia de la Educación en la Lucha</h3>
+                    <p class="text-gray-600 mb-4">Análisis sobre el papel fundamental de la educación en el movimiento por la libertad...</p>
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-[#0046BE] hover:text-[#003A99] font-semibold">Leer más →</a>
+                        <div class="flex items-center text-gray-500">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                            </svg>
+                            <span>5 comentarios</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Paginación -->
+            <div class="mt-8 flex justify-center space-x-2">
+                <button class="px-4 py-2 border rounded-lg text-[#0046BE] hover:bg-gray-100">Anterior</button>
+                <button class="px-4 py-2 bg-[#0046BE] text-white rounded-lg">1</button>
+                <button class="px-4 py-2 border rounded-lg text-[#0046BE] hover:bg-gray-100">2</button>
+                <button class="px-4 py-2 border rounded-lg text-[#0046BE] hover:bg-gray-100">3</button>
+                <button class="px-4 py-2 border rounded-lg text-[#0046BE] hover:bg-gray-100">Siguiente</button>
+            </div>
+        </section>
+
+        <!-- 2. CALENDARIO Y EVENTOS -->
+        <section id="eventos" class="mb-16">
+            <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Calendario y Eventos</h2>
+            
+            <!-- Calendario Mensual -->
+            <div class="bg-white rounded-lg shadow-xl p-6 mb-8">
+                <!-- Calendario -->
+                <div class="flex justify-between items-center mb-6">
+                    <button class="text-[#0046BE] hover:text-[#003A99]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <h3 class="text-2xl font-bold">Marzo 2024</h3>
+                    <button class="text-[#0046BE] hover:text-[#003A99]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Días de la Semana -->
+                <div class="grid grid-cols-7 gap-2 mb-4">
+                    <div class="text-center font-bold">Dom</div>
+                    <div class="text-center font-bold">Lun</div>
+                    <div class="text-center font-bold">Mar</div>
+                    <div class="text-center font-bold">Mié</div>
+                    <div class="text-center font-bold">Jue</div>
+                    <div class="text-center font-bold">Vie</div>
+                    <div class="text-center font-bold">Sáb</div>
+                </div>
+
+                <!-- Días del Mes -->
+                <div class="grid grid-cols-7 gap-2">
+                    <!-- Semana 1 -->
+                    <div class="text-center p-2 text-gray-400">25</div>
+                    <div class="text-center p-2 text-gray-400">26</div>
+                    <div class="text-center p-2 text-gray-400">27</div>
+                    <div class="text-center p-2 text-gray-400">28</div>
+                    <div class="text-center p-2 text-gray-400">29</div>
+                    <div class="text-center p-2">1</div>
+                    <div class="text-center p-2">2</div>
+
+                    <!-- Semana 2 -->
+                    <div class="text-center p-2">3</div>
+                    <div class="text-center p-2">4</div>
+                    <div class="text-center p-2">5</div>
+                    <div class="text-center p-2">6</div>
+                    <div class="text-center p-2">7</div>
+                    <div class="text-center p-2">8</div>
+                    <div class="text-center p-2">9</div>
+
+                    <!-- Semana 3 -->
+                    <div class="text-center p-2">10</div>
+                    <div class="text-center p-2">11</div>
+                    <div class="text-center p-2">12</div>
+                    <div class="text-center p-2">13</div>
+                    <div class="text-center p-2">14</div>
+                    <div class="text-center p-2 bg-[#0046BE] text-white rounded-lg">15</div>
+                    <div class="text-center p-2">16</div>
+
+                    <!-- Semana 4 -->
+                    <div class="text-center p-2">17</div>
+                    <div class="text-center p-2">18</div>
+                    <div class="text-center p-2">19</div>
+                    <div class="text-center p-2">20</div>
+                    <div class="text-center p-2">21</div>
+                    <div class="text-center p-2">22</div>
+                    <div class="text-center p-2">23</div>
+
+                    <!-- Semana 5 -->
+                    <div class="text-center p-2">24</div>
+                    <div class="text-center p-2">25</div>
+                    <div class="text-center p-2">26</div>
+                    <div class="text-center p-2">27</div>
+                    <div class="text-center p-2">28</div>
+                    <div class="text-center p-2">29</div>
+                    <div class="text-center p-2">30</div>
+
+                    <!-- Semana 6 -->
+                    <div class="text-center p-2">31</div>
+                    <div class="text-center p-2 text-gray-400">1</div>
+                    <div class="text-center p-2 text-gray-400">2</div>
+                    <div class="text-center p-2 text-gray-400">3</div>
+                    <div class="text-center p-2 text-gray-400">4</div>
+                    <div class="text-center p-2 text-gray-400">5</div>
+                    <div class="text-center p-2 text-gray-400">6</div>
+                </div>
+            </div>
+
+            <!-- Próximos Eventos -->
+            <h3 class="text-3xl text-[#0046BE] mb-6 text-center font-bold">Próximos Eventos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Evento 1 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200 relative">
+                        <!-- Fecha del evento -->
+                        <div class="absolute top-4 right-4 bg-[#0046BE] text-white px-4 py-2 rounded-lg">
+                            <div class="text-sm">MAR</div>
+                            <div class="text-2xl font-bold">15</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Conferencia Internacional</h3>
+                        <p class="text-gray-600 mb-4">Encuentro virtual sobre derechos humanos en Cuba</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-500">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>2:00 PM - 5:00 PM</span>
+                            </div>
+                            <div class="flex items-center text-gray-500">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Evento Virtual</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">
+                            Registrarse
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Evento 2 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200 relative">
+                        <!-- Fecha del evento -->
+                        <div class="absolute top-4 right-4 bg-[#0046BE] text-white px-4 py-2 rounded-lg">
+                            <div class="text-sm">ABR</div>
+                            <div class="text-2xl font-bold">05</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Taller de Activismo</h3>
+                        <p class="text-gray-600 mb-4">Estrategias para el activismo digital seguro</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-500">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>10:00 AM - 12:00 PM</span>
+                            </div>
+                            <div class="flex items-center text-gray-500">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Sede Central</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">
+                            Registrarse
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Evento 3 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gray-200 relative">
+                        <!-- Fecha del evento -->
+                        <div class="absolute top-4 right-4 bg-[#0046BE] text-white px-4 py-2 rounded-lg">
+                            <div class="text-sm">ABR</div>
+                            <div class="text-2xl font-bold">20</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Festival Cultural</h3>
+                        <p class="text-gray-600 mb-4">Celebración de la cultura y arte cubano</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-500">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>3:00 PM - 9:00 PM</span>
+                            </div>
+                            <div class="flex items-center text-gray-500">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Plaza Central</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">
+                            Registrarse
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. REGISTRO Y RECORDATORIOS -->
+        <section id="participacion" class="mb-16">
+            <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Participa en Nuestros Eventos</h2>
+            
+            <!-- Formulario de Registro -->
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8 mb-8">
+                <form class="space-y-6">
+                    <div>
+                        <label for="nombre" class="block text-gray-700 mb-2">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    
+                    <div>
+                        <label for="evento" class="block text-gray-700 mb-2">Seleccionar Evento</label>
+                        <select id="evento" name="evento" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                            <option value="">Seleccione un evento</option>
+                            <option value="conferencia">Conferencia Internacional - 15 MAR</option>
+                            <option value="taller">Taller de Activismo - 05 ABR</option>
+                            <option value="festival">Festival Cultural - 20 ABR</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="participantes" class="block text-gray-700 mb-2">Número de Participantes</label>
+                        <input type="number" id="participantes" name="participantes" min="1" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    
+                    <div>
+                        <label for="comentarios" class="block text-gray-700 mb-2">Comentarios Adicionales</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-[#0046BE] text-white py-3 rounded-lg hover:bg-[#003A99]">
+                        Confirmar Registro
+                    </button>
+                </form>
+            </div>
+
+            <!-- Sistema de Recordatorios -->
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8">
+                <p class="text-center mb-6">Recibe recordatorios de los eventos a los que te has registrado</p>
+                
+                <form class="space-y-6">
+                    <div>
+                        <label for="email-recordatorio" class="block text-gray-700 mb-2">Correo Electrónico</label>
+                        <input type="email" id="email-recordatorio" name="email-recordatorio" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0046BE] focus:border-transparent" required>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="block text-gray-700 mb-2">Preferencias de Recordatorio</label>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="recordatorio-email" name="recordatorio-email" class="mr-2">
+                            <label for="recordatorio-email">Recordatorio por email</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="recordatorio-calendario" name="recordatorio-calendario" class="mr-2">
+                            <label for="recordatorio-calendario">Añadir al calendario</label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-[#0046BE] text-white py-3 rounded-lg hover:bg-[#003A99]">
+                        Activar Recordatorios
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0046BE] text-white py-8 text-center">
+        <p class="font-bold">Coalición de Mujeres x Cuba Libre</p>
+        <p>Trabajando por una Cuba libre y democrática</p>
+    </footer>
+</body>
+</html> 

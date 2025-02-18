@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Metatags -->
+    <title>Testimonios | Coalición de Mujeres x Cuba Libre</title>
+    <meta name="description" content="Testimonios y experiencias de las mujeres que luchan por una Cuba libre">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0046BE',
+                            'blue-dark': '#003A99',
+                            red: '#B71C1C',
+                            'red-dark': '#8B0000',
+                            white: '#FFFFFF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-white">
+    <!-- Navbar -->
+    <nav class="bg-[#0046BE] text-white p-4">
+        <div class="container mx-auto">
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold">Coalición de Mujeres x Cuba Libre</a>
+                <div class="space-x-6">
+                    <a href="quienes-somos.html" class="hover:text-gray-200">Quiénes Somos</a>
+                    <a href="noticias.html" class="hover:text-gray-200">Noticias</a>
+                    <a href="testimonios.html" class="hover:text-gray-200">Testimonios</a>
+                    <a href="recursos.html" class="hover:text-gray-200">Recursos</a>
+                    <a href="cultura.html" class="hover:text-gray-200">Cultura</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden" x-data="{ open: false }">
+                <div class="flex items-center justify-between">
+                    <a href="index.html" class="text-xl font-bold">Coalición</a>
+                    <button @click="open = !open" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div x-show="open" class="mt-4 space-y-2">
+                    <a href="quienes-somos.html" class="block hover:text-gray-200">Quiénes Somos</a>
+                    <a href="noticias.html" class="block hover:text-gray-200">Noticias</a>
+                    <a href="testimonios.html" class="block hover:text-gray-200">Testimonios</a>
+                    <a href="recursos.html" class="block hover:text-gray-200">Recursos</a>
+                    <a href="cultura.html" class="block hover:text-gray-200">Cultura</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-brand-blue text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Testimonios</h1>
+            <p class="text-xl">Historias de valor y resistencia de mujeres cubanas</p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Testimonios Destacados -->
+        <section class="mb-16">
+            <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Testimonios en Video</h2>
+            
+            <!-- Grid de Testimonios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+                        <!-- Placeholder para video -->
+                        <div class="flex items-center justify-center h-48">
+                            <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">María González</h3>
+                        <p class="text-gray-600 mb-4">Activista por la libertad</p>
+                        <p class="text-gray-500 mb-4">Mi historia de lucha y esperanza por una Cuba libre...</p>
+                        <button class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">Ver Testimonio</button>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+                        <!-- Placeholder para video -->
+                        <div class="flex items-center justify-center h-48">
+                            <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Ana Martínez</h3>
+                        <p class="text-gray-600 mb-4">Defensora de derechos humanos</p>
+                        <p class="text-gray-500 mb-4">Compartiendo experiencias de resistencia pacífica...</p>
+                        <button class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">Ver Testimonio</button>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+                        <!-- Placeholder para video -->
+                        <div class="flex items-center justify-center h-48">
+                            <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#0046BE] mb-2">Laura Rodríguez</h3>
+                        <p class="text-gray-600 mb-4">Periodista independiente</p>
+                        <p class="text-gray-500 mb-4">Documentando la realidad cubana desde dentro...</p>
+                        <button class="w-full bg-[#0046BE] text-white py-2 rounded-lg hover:bg-[#003A99]">Ver Testimonio</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Fotos -->
+        <section class="mb-16">
+            <h2 class="text-4xl text-[#0046BE] mb-8 text-center font-bold">Galería de Momentos</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Imágenes de la galería -->
+                <div class="bg-gray-200 aspect-square rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="bg-gray-200 aspect-square rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="bg-gray-200 aspect-square rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="bg-gray-200 aspect-square rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="bg-gray-200 aspect-square rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="bg-gray-200 aspect-square rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="bg-gray-200 aspect-square rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+                <div class="bg-gray-200 aspect-square rounded-lg hover:opacity-75 transition-opacity cursor-pointer"></div>
+            </div>
+        </section>
+
+        <!-- Comparte tu Historia -->
+        <section class="mb-16">
+            <div class="bg-white p-8 rounded-lg shadow-xl text-center">
+                <h2 class="text-4xl text-[#0046BE] mb-8 font-bold">Comparte tu Historia</h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    Tu testimonio es importante. Ayúdanos a construir la memoria histórica de nuestra lucha.
+                </p>
+                <button class="bg-[#0046BE] text-white px-8 py-3 rounded-lg hover:bg-[#003A99] transition-colors">
+                    Enviar mi Testimonio
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0046BE] text-white py-8 text-center">
+        <p class="font-bold">Coalición de Mujeres x Cuba Libre</p>
+        <p>Trabajando por una Cuba libre y democrática</p>
+    </footer>
+</body>
+</html> 
